@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ixarys ix – Websites, built clean and fast</title>
+<meta name="description" content="Portfolio of ixarys ix. I build websites for hotels, shops, bakeries and brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap"></noscript>
+<script>
+try{var t=localStorage.getItem("ix-theme");if(t==="light"||t==="mid"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
+</script>
+<style>
+:root{
+  --bg:#fbfbfa;--ink:#111111;--muted:#6c6c68;--card:#ffffff;--line:#e7e7e3;--acc:#2f7d4f;--on:#ffffff;--soft:#f1f1ee;
+  --display:"Google Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Google Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="mid"]{--bg:#e3e3de;--ink:#1a1a18;--muted:#5f5f5a;--card:#ecece8;--line:#cacac4;--acc:#2f6b49;--on:#ffffff;--soft:#d6d6d0}
+:root[data-theme="dark"]{--bg:#0b0b0b;--ink:#f1f1ee;--muted:#9a9a95;--card:#141414;--line:#242424;--acc:#6fcf97;--on:#04140a;--soft:#171717;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth;height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button{touch-action:manipulation}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .4s,color .4s}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30;transition:background-color .4s}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.04;letter-spacing:-.035em}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font:700 24px var(--display);letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:10px;height:10px;border-radius:50%;background:var(--acc);display:inline-block}
+.nav-r{display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px}
+.nav-r>a{text-decoration:none;color:var(--muted)}.nav-r>a:hover{color:var(--ink)}
+.theme{display:flex;gap:3px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px}
+.theme button{font:600 13px var(--body);border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.theme button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{position:relative;padding:92px 0 76px;overflow:hidden}
+.glow{will-change:transform;position:absolute;right:-120px;top:-60px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--acc),transparent 66%);opacity:.08;animation:breathe 9s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{50%{transform:scale(1.12) translate(-16px,12px)}}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 16px;font-weight:600;font-size:14px}
+.pill b{width:8px;height:8px;border-radius:50%;background:var(--acc);position:relative}
+.pill b::after{content:"";position:absolute;inset:0;border-radius:50%;background:color-mix(in srgb,var(--acc) 25%,transparent);transform:scale(2);animation:ping 2.2s infinite}
+@keyframes ping{50%{transform:scale(3);opacity:0}}
+.hero h1{font-size:clamp(46px,9vw,118px);margin:26px 0 22px;max-width:10em;position:relative}
+.hero h1 em,.head h2 em,.big em{color:var(--muted);font-style:normal}
+.lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:36em;position:relative}
+.lead b{color:var(--ink);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;position:relative}
+.btn{font:700 16px var(--body);display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,background-color .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.main{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--bg)}
+
+/* marquee */
+.marq{contain:paint;background:transparent;color:var(--ink);overflow:hidden;white-space:nowrap;padding:15px 0;border-block:1px solid var(--line);transition:color .4s}
+.marq .rail{will-change:transform;display:inline-block;animation:slide 32s linear infinite;font:500 26px var(--display)}
+.marq span{margin:0 24px}.marq i{font-style:normal;color:var(--acc);margin:0 4px}
+.marq.rev .rail{animation-direction:reverse;animation-duration:44s}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes slide3{to{transform:translateX(calc(-100%/var(--n,3)))}}
+
+/* work */
+.sec{padding:96px 0 40px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.head h2{font-size:clamp(36px,5.4vw,68px)}
+.head h2 em{color:var(--acc)}
+.head p{color:var(--muted);max-width:25em}
+.slider{overflow:hidden;padding:6px 0 24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:20px;width:max-content;animation:slide 48s linear infinite}
+.slider:hover .track,.slider:focus-within .track{animation-play-state:paused}
+.demo{width:min(340px,78vw);flex:none;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:14px 14px 22px;text-decoration:none;display:grid;gap:14px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.demo:hover{transform:translateY(-8px);border-color:var(--ink);box-shadow:0 22px 40px -26px rgba(0,0,0,.35)}
+.pv{height:190px;border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.pv .bar{display:flex;gap:5px;padding:9px 11px;background:rgba(0,0,0,.18)}
+.pv .bar u{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.7)}
+.pv .in{padding:20px 18px;display:grid;gap:9px;align-content:center;flex:1}
+.pv .l1{height:20px;width:74%;border-radius:6px;background:var(--fg)}
+.pv .l2{height:20px;width:48%;border-radius:6px;background:var(--fg)}
+.pv .l3{height:8px;width:62%;border-radius:4px;background:var(--fg);opacity:.5;margin-top:4px}
+.pv .l4{height:28px;width:34%;border-radius:99px;background:var(--fg);margin-top:8px}
+.pv .sh{position:absolute;right:-26px;bottom:-26px;width:110px;height:110px;border-radius:50%;background:var(--fg);opacity:.2}
+.demo .tg{font:700 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--acc);padding:0 8px}
+.demo h3{font-size:26px;padding:0 8px;margin-top:-6px}
+.demo p{color:var(--muted);font-size:15px;padding:0 8px;margin-top:-6px}
+.demo .go{font-weight:700;font-size:15px;padding:0 8px;display:flex;align-items:center;gap:8px}
+.demo .go span{transition:transform .2s}.demo:hover .go span{transform:translate(4px,0)}
+
+/* terms */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{border-radius:28px;padding:34px;border:1px solid var(--line);background:var(--card)}
+.box.hl{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.box h3{font-size:30px;margin-bottom:16px}
+.box ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.box li{padding-left:30px;position:relative}
+.box li::before{content:"✓";position:absolute;left:0;font-weight:800}
+.box.no li::before{content:"–";color:var(--muted)}
+.box.no li{color:var(--muted)}
+
+/* contact */
+.contact{padding:96px 0}
+.big{font:600 clamp(40px,7.4vw,98px)/1.02 var(--display);letter-spacing:-.035em;margin-bottom:22px}
+.big em{color:var(--acc)}
+.contact .lead{margin-bottom:44px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lk{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;text-decoration:none;display:grid;gap:56px;align-content:space-between;min-height:230px;transition:transform .25s,background-color .25s,color .25s,border-color .25s}
+.lk:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-6px)}
+.lk small{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+.lk:hover small{color:var(--bg);opacity:.7}
+.lk b{display:block;font:600 26px/1.15 var(--display);letter-spacing:-.02em;margin-top:6px;overflow-wrap:anywhere}
+.lk span{font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.copy{margin-top:18px;font:600 14px var(--body);background:transparent;color:var(--muted);border:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:6px 0}
+.copy:hover{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .two,.links{grid-template-columns:1fr}
+  .nav-r>a{display:none}
+  .hero{padding:60px 0 56px}
+  .lk{min-height:170px;gap:34px}
+}
+@media (max-width:420px){.theme button{padding:6px 9px}.logo{font-size:24px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .slider{overflow-x:auto}.marq{overflow-x:auto}
+}
+
+/* mobile performance */
+@media (max-width:820px){
+  .top{background:color-mix(in srgb,var(--bg) 98%,transparent);backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+@media (max-width:820px),(hover:none){
+  .slider{-webkit-mask-image:none;mask-image:none;position:relative}
+  .slider::before,.slider::after{content:"";position:absolute;top:0;bottom:0;width:6%;z-index:2;pointer-events:none}
+  .slider::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+  .slider::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+}
+@media (hover:none){
+  .slider:hover .track,.slider:focus-within .track{animation-play-state:running}
+  .demo:hover{transform:none;border-color:var(--line);box-shadow:none}
+  .demo:hover .go span{transform:none}
+  .btn:hover{transform:none}
+  .btn.line:hover{background:transparent;color:var(--ink)}
+  .lk:hover{background:var(--card);color:inherit;border-color:var(--line);transform:none}
+  .lk:hover small{color:var(--acc);opacity:1}
+  .vx:hover{background:var(--card);color:var(--ink)}
+}
+/* pause animations that nobody can see */
+.hero.off .glow,.hero.off .pill b::after,.marq.off .rail,.slider.off .track,html.vopen *,html.vopen *::before,html.vopen *::after{animation-play-state:paused!important}
+
+/* viewer */
+.viewer{overscroll-behavior:contain;position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.viewer[hidden]{display:none}
+.vbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line)}
+.vbar b{font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vtools{display:flex;gap:8px;align-items:center}
+.seg{display:flex;gap:3px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{font:600 13px var(--body);border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.vx{font:600 14px var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer}
+.vx:hover{background:var(--ink);color:var(--bg)}
+.vstage{flex:1;min-height:0;display:flex;justify-content:center;background:var(--soft)}
+.vstage iframe{width:100%;height:100%;border:0;background:#fff;display:block}
+.vstage.m{padding:16px}
+.vstage.m iframe{width:390px;max-width:100%;border-radius:26px;border:1px solid var(--line)}
+@media (max-width:820px){.vdev{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>ixarys ix</a>
+    <div class="nav-r">
+      <a href="#work">Work</a><a href="#terms">What you get</a><a href="#contact">Contact</a>
+      <div class="theme" role="group" aria-label="Theme">
+        <button type="button" data-t="light" aria-pressed="true">Light</button>
+        <button type="button" data-t="mid" aria-pressed="false">Mid</button>
+        <button type="button" data-t="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="pill"><b></b>Websites for businesses</span>
+    <h1>Websites, built <em>clean</em> and fast.</h1>
+    <p class="lead">I’m ixarys ix. I design and build websites for hotels, shops, bakeries and brands. <b>You get the website.</b> Domain, activation and management stay with you.</p>
+    <div class="cta">
+      <a class="btn main" href="#contact">Get a website →</a>
+      <a class="btn line" href="#work">See demos</a>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="rail" id="m1"></div></div>
+
+<section class="sec" id="work">
+  <div class="wrap head">
+    <h2>Selected <em>demos</em></h2>
+    <p>Four live demo sites. Tap any card to open the full site right here, in desktop or mobile view. Hover to pause the slider.</p>
+  </div>
+  <div class="slider" id="slider"><div class="track" id="track"></div></div>
+</section>
+
+<section class="sec" id="terms">
+  <div class="wrap">
+    <div class="head"><h2>Simple <em>terms</em></h2><p>One clear thing, done well. Nothing hidden.</p></div>
+    <div class="two">
+      <div class="box hl"><h3>What I do</h3><ul><li>Design your website</li><li>Build it to work on phones and computers</li><li>Add your contact, WhatsApp and call buttons</li><li>Hand over the finished website</li></ul></div>
+      <div class="box no"><h3>What I don’t do</h3><ul><li>Domain name purchase</li><li>Hosting or activation</li><li>Ongoing management or updates</li><li>Anything beyond the website itself</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="marq rev" aria-hidden="true"><div class="rail" id="m2"></div></div>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="big">Want a website? <em>Contact me.</em></h2>
+    <p class="lead">I only sell websites, not the activation, domain or management. Message me on Instagram or Telegram, or send an email.</p>
+    <div class="links">
+      <a class="lk" href="https://www.instagram.com/imtiyaz.ali_/" target="_blank" rel="noopener"><div><small>Instagram</small><b>@imtiyaz.ali_</b></div><span>Open profile <i>↗</i></span></a>
+      <a class="lk" href="https://t.me/+Va7RdWnR42xhMTU9" target="_blank" rel="noopener"><div><small>Telegram group</small><b>Join the group</b></div><span>Open Telegram <i>↗</i></span></a>
+      <a class="lk" href="mailto:wmoondrift27@gmail.com?subject=Website%20enquiry&amp;body=Hi%2C%20I%20want%20a%20website%20for%20my%20business."><div><small>Email</small><b>wmoondrift27@gmail.com</b></div><span>Send an email <i>↗</i></span></a>
+    </div>
+    <button class="copy" id="copy" type="button">Copy email address</button>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 ixarys ix</span><span>Websites only. No domain, activation or management.</span></div></footer>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Demo preview" hidden>
+  <div class="vbar">
+    <b id="vtitle"></b>
+    <div class="vtools">
+      <div class="seg vdev" role="group" aria-label="Preview size"><button type="button" data-v="d" aria-pressed="true">Desktop</button><button type="button" data-v="m" aria-pressed="false">Mobile</button></div>
+      <button class="vx" id="vclose" type="button">Close ✕</button>
+    </div>
+  </div>
+  <div class="vstage" id="vstage"><iframe id="vframe" title="Demo website" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms"></iframe></div>
+</div>
+<script type="text/plain" id="demo-hotel">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotel Nilsagar – Stay and dine by the sea, New Digha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;700&display=swap"></noscript>
+<style>
+:root{
+  --deep:#0b3a4a; --sea:#2b8a9b; --foam:#f2f8f7; --ink:#12272d; --muted:#4f666c;
+  --gold:#e8ae3c; --card:#ffffff; --line:#d3e3e2; --bg:#f2f8f7;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0a1a20;--ink:#e6f1f0;--muted:#9bb5b9;--card:#10262d;--line:#1f3d46;--foam:#10262d;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0a1a20;--ink:#e6f1f0;--muted:#9bb5b9;--card:#10262d;--line:#1f3d46;--foam:#10262d;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button{touch-action:manipulation}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+section h2{font-size:clamp(28px,4.5vw,40px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 36px}
+
+/* top bar */
+header{position:absolute;inset:0 0 auto;z-index:5;padding:calc(18px + env(safe-area-inset-top,0px)) 0 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:"Young Serif",Georgia,serif;font-size:22px;color:#fff;text-decoration:none}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:500;font-size:15px;opacity:.92}
+nav a:hover{text-decoration:underline}
+
+/* hero */
+.hero{position:relative;min-height:640px;background:linear-gradient(#10506a 0%,#2b8a9b 45%,#f1c27a 78%,#f6dfae 100%);color:#fff;overflow:hidden;display:flex;align-items:center}
+.sun{position:absolute;left:62%;bottom:26%;width:150px;height:150px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 90px 30px rgba(255,214,120,.55)}
+.hero .wrap{position:relative;z-index:3;padding-top:90px;padding-bottom:150px}
+.hero h1{font-size:clamp(38px,7.5vw,72px);max-width:13ch;text-shadow:0 2px 24px rgba(5,40,55,.35)}
+.hero p{font-size:19px;max-width:44ch;margin:18px 0 28px;text-shadow:0 1px 12px rgba(5,40,55,.4)}
+.btn{display:inline-block;background:var(--gold);color:#2b1c00;font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:#fff;border:2px solid #fff;margin-left:10px}
+.waves{position:absolute;left:0;bottom:-2px;width:100%;height:150px;z-index:2}
+.waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%;will-change:transform}
+.waves.off svg{animation-play-state:paused}
+.w1{animation:drift 22s linear infinite}
+.w2{animation:drift 34s linear infinite reverse}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.w1,.w2{animation:none}}
+
+/* facts strip */
+.facts{background:var(--deep);color:#fff;padding:26px 0}
+.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.facts b{display:block;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:19px}
+.facts span{opacity:.8;font-size:15px}
+
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.room .pic{height:150px;position:relative}
+.room:nth-child(1) .pic{background:linear-gradient(135deg,#9fd0d6,#d9eeee)}
+.room:nth-child(2) .pic{background:linear-gradient(135deg,#2b8a9b,#9fd0d6)}
+.room:nth-child(3) .pic{background:linear-gradient(135deg,#0b3a4a,#2b8a9b)}
+.room .pic::after{content:"Photo of this room goes here";position:absolute;inset:auto 12px 10px auto;font-size:12px;color:#fff;background:rgba(0,0,0,.35);padding:3px 9px;border-radius:99px}
+.room .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.room h3{font-size:22px}
+.room ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.price{margin-top:auto;font-weight:700;font-size:20px}
+.price small{font-weight:400;color:var(--muted);font-size:14px}
+
+/* dining */
+.dine{background:var(--foam)}
+.dine .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.menu{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 22px}
+.menu div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.menu div:last-child{border:0}
+.menu em{display:block;font-style:normal;color:var(--muted);font-size:14px}
+.menu b{white-space:nowrap}
+.times{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.times span{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px}
+.times strong{display:block}
+
+/* nearby */
+.near{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.near div{border-left:4px solid var(--gold);padding:6px 14px}
+.near b{display:block}
+.near span{color:var(--muted);font-size:15px}
+
+/* enquiry */
+.enq{background:var(--deep);color:#fff}
+.enq .lead{color:#bcd6d9}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:760px}
+label{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:500}
+input,select{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid #3d6a76;background:#0f4a5c;color:#fff;color-scheme:dark}
+form .btn{grid-column:1/-1;text-align:center;justify-self:start}
+.note{font-size:14px;color:#9fc2c7;margin-top:14px}
+
+footer{padding:34px 0;font-size:15px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){.dine .grid{grid-template-columns:1fr}.hero .wrap{padding-bottom:120px}.sun{left:58%;width:100px;height:100px}.btn.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Hotel Nilsagar</a>
+    <nav aria-label="Main">
+      <a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#nearby">Around Digha</a><a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1>Wake up to the Bay of Bengal.</h1>
+    <p>Sea-view rooms, fresh seafood and Bengali home cooking, two minutes’ walk from the New Digha beach.</p>
+    <a class="btn" href="#book">Check availability</a><a class="btn ghost" href="#rooms">See rooms</a>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="w2" viewBox="0 0 1200 150" preserveAspectRatio="none"><path d="M0 70 Q150 20 300 70 T600 70 T900 70 T1200 70 V150 H0Z" fill="#0b3a4a" opacity=".55"/></svg>
+    <svg class="w1" viewBox="0 0 1200 150" preserveAspectRatio="none"><path d="M0 95 Q150 55 300 95 T600 95 T900 95 T1200 95 V150 H0Z" fill="#f2f8f7"/></svg>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div><b>2 min to the beach</b><span>Walk, no taxi needed</span></div>
+    <div><b>24-hour check-in</b><span>Arrive on any train or bus</span></div>
+    <div><b>Own restaurant</b><span>Breakfast to late dinner</span></div>
+    <div><b>Free parking</b><span>Cars and bikes</span></div>
+  </div>
+</div>
+
+<section id="rooms">
+  <div class="wrap">
+    <h2>Rooms for couples, families and groups</h2>
+    <p class="lead">Every room has air conditioning, a TV, hot water and Wi-Fi. Pick the view and size that suit your trip.</p>
+    <div class="rooms">
+      <article class="room"><div class="pic"></div><div class="body">
+        <h3>Standard room</h3>
+        <ul><li>Double bed, 2 guests</li><li>Courtyard side, quiet at night</li><li>Breakfast included</li></ul>
+        <div class="price">₹1,800 <small>per night, sample price</small></div></div></article>
+      <article class="room"><div class="pic"></div><div class="body">
+        <h3>Sea-view room</h3>
+        <ul><li>Double bed, 2 guests</li><li>Private balcony facing the sea</li><li>Breakfast included</li></ul>
+        <div class="price">₹2,800 <small>per night, sample price</small></div></div></article>
+      <article class="room"><div class="pic"></div><div class="body">
+        <h3>Family suite</h3>
+        <ul><li>Two beds, up to 4 guests</li><li>Sitting area and sea-view balcony</li><li>Breakfast and one dinner included</li></ul>
+        <div class="price">₹4,200 <small>per night, sample price</small></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="dining" class="dine">
+  <div class="wrap grid">
+    <div>
+      <h2>Fresh from the sea, cooked the Bengali way</h2>
+      <p class="lead">Our kitchen buys fish each morning from the Digha market. Vegetarian and Jain meals are always available on request.</p>
+      <div class="times">
+        <span><strong>Breakfast</strong>7:30 am – 10:30 am</span>
+        <span><strong>Lunch</strong>12:30 pm – 3:30 pm</span>
+        <span><strong>Dinner</strong>7:30 pm – 10:30 pm</span>
+      </div>
+    </div>
+    <div class="menu" role="list" aria-label="Sample menu">
+      <div role="listitem"><span>Prawn malai curry<em>Coconut milk, steamed rice</em></span><b>₹380</b></div>
+      <div role="listitem"><span>Fried pomfret<em>Whole fish, lemon, salad</em></span><b>₹420</b></div>
+      <div role="listitem"><span>Bhetki paturi<em>Steamed in banana leaf</em></span><b>₹360</b></div>
+      <div role="listitem"><span>Chicken kosha<em>Slow-cooked, with luchi</em></span><b>₹280</b></div>
+      <div role="listitem"><span>Veg thali<em>Dal, two sabzi, chutney, sweet</em></span><b>₹190</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="nearby">
+  <div class="wrap">
+    <h2>What to see around Digha</h2>
+    <p class="lead">We can arrange a car or auto for any of these. Distances are approximate.</p>
+    <div class="near">
+      <div><b>New Digha beach</b><span>2 min walk</span></div>
+      <div><b>Old Digha and the market</b><span>About 3 km</span></div>
+      <div><b>Udaipur beach</b><span>About 6 km, quiet and green</span></div>
+      <div><b>Chandaneswar temple</b><span>About 8 km, near the Odisha border</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="enq">
+  <div class="wrap">
+    <h2>Ask for a room</h2>
+    <p class="lead">Fill in your trip details and send them to us on WhatsApp. We reply with availability and the price.</p>
+    <form id="f" onsubmit="return false">
+      <label>Your name<input id="n" autocomplete="name" placeholder="Full name"></label>
+      <label>Check-in<input id="a" type="date"></label>
+      <label>Check-out<input id="b" type="date"></label>
+      <label>Guests<input id="g" type="number" min="1" max="12" value="2"></label>
+      <label>Room<select id="r"><option>Standard room</option><option selected>Sea-view room</option><option>Family suite</option></select></label>
+      <a class="btn" id="send" href="#book" target="_blank" rel="noopener">Send enquiry on WhatsApp</a>
+    </form>
+    <p class="note">Demo note: this button uses a placeholder number. The real site will use your hotel’s own WhatsApp number.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Hotel Nilsagar, Sea Beach Road, New Digha, West Bengal (sample address)</span>
+    <span>Demo website. Name, prices and photos are placeholders.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ids=["n","a","b","g","r"],el={};
+  ids.forEach(function(i){el[i]=document.getElementById(i);el[i].addEventListener("input",build);el[i].addEventListener("change",build)});
+  var send=document.getElementById("send");
+  function build(){
+    var t="Hello Hotel Nilsagar, I would like to book a "+el.r.value+
+      (el.a.value?" from "+el.a.value:"")+(el.b.value?" to "+el.b.value:"")+
+      " for "+(el.g.value||"2")+" guest(s)."+(el.n.value?" Name: "+el.n.value:"");
+    send.href="https://wa.me/919800000000?text="+encodeURIComponent(t);
+  }
+  build();
+  var hero=document.querySelector(".hero"),waves=document.querySelector(".waves");
+  if(hero&&waves&&"IntersectionObserver" in window)new IntersectionObserver(function(e){waves.classList.toggle("off",!e[0].isIntersecting)}).observe(hero);
+})();
+<\/script>
+</body>
+</html>
+
+</script>
+<script type="text/plain" id="demo-perfume">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arkaa – Deodorant that lasts the whole day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap"></noscript>
+<style>
+:root{
+  --bg:#F3F7F8;--ink:#10303A;--muted:#4B6770;--card:#FFFFFF;--line:#D3E1E6;
+  --scent:#2F7FA8;--on:#FFFFFF;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F2127;--ink:#E6F1F4;--muted:#9DB6BD;--card:#17303A;--line:#264450;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F2127;--ink:#E6F1F4;--muted:#9DB6BD;--card:#17303A;--line:#264450;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button{touch-action:manipulation}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;letter-spacing:-.025em}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;position:relative}
+
+/* HERO */
+.hero{background:var(--scent);color:var(--on);position:relative;overflow:hidden;transition:background-color .5s,color .5s;padding-bottom:120px}
+.big{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);font:800 clamp(180px,34vw,480px)/.8 var(--display);letter-spacing:-.06em;color:var(--on);opacity:.13;pointer-events:none;user-select:none;white-space:nowrap}
+.orb{position:absolute;border-radius:50%;background:var(--on);opacity:.12}
+.o1{width:260px;height:260px;top:-80px;right:8%}.o2{width:120px;height:120px;top:46%;left:-40px}.o3{width:70px;height:70px;bottom:22%;right:42%}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;height:90px;display:block}
+.wave path{fill:var(--bg)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;position:relative}
+.logo{font:800 32px var(--display);letter-spacing:-.05em;text-decoration:none}
+.nav-r{display:flex;gap:26px;align-items:center;font-weight:500}
+.nav-r a{text-decoration:none;opacity:.85}.nav-r a:hover{opacity:1}
+.cart{background:var(--on);color:var(--scent);border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;transition:color .5s}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;padding-top:28px;position:relative}
+.hero-copy{display:grid;gap:26px}
+.tag{display:inline-flex;gap:8px;align-items:center;justify-self:start;border:2px solid currentColor;border-radius:999px;padding:6px 16px;font-weight:600;font-size:15px}
+.hero h1{font-size:clamp(50px,8.4vw,112px);font-weight:800}
+.lead{font-size:20px;max-width:27em;opacity:.92}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:600 15px var(--body);border:2px solid currentColor;color:inherit;background:transparent;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.8;transition:transform .15s}
+.chip:hover{transform:translateY(-2px);opacity:1}
+.chip[aria-pressed="true"]{background:var(--on);color:var(--scent);border-color:var(--on);opacity:1}
+.buy{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.price{font:800 34px var(--display)}
+.btn{font:600 17px var(--body);border:0;border-radius:999px;padding:16px 30px;cursor:pointer;background:var(--ink);color:var(--bg);text-decoration:none;display:inline-block;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.hero .btn{background:var(--on);color:var(--scent)}
+.stage{display:grid;justify-items:center;gap:10px;text-align:center}
+.stage svg{width:min(300px,64vw);height:auto;filter:drop-shadow(0 30px 30px rgba(0,0,0,.28));animation:float 5s ease-in-out infinite;will-change:transform}
+.hero.off .stage svg:not(.pop),.marq.off div{animation-play-state:paused}
+.stage svg.pop{animation:pop .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes float{50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes pop{0%{transform:rotate(-14deg) scale(.88)}100%{transform:none}}
+.stick-body{fill:#fff}.stick-cap{fill:#10303A}.stick-band{fill:var(--scent);transition:fill .5s}
+.stick-shine{fill:#000;opacity:.07}
+.stick-word{font:800 30px var(--display);fill:var(--on);letter-spacing:-.04em;transition:fill .5s}
+.stage h2{font-size:34px}.stage p{max-width:22em;opacity:.92}
+
+/* MARQUEE */
+.marq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:16px 0;font:700 22px var(--display);letter-spacing:-.01em}
+.marq div{display:inline-block;animation:slide 28s linear infinite;will-change:transform}
+.marq span{margin:0 22px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{padding:88px 0}
+.sec h2{font-size:clamp(36px,5.4vw,68px);max-width:15em;margin-bottom:48px;font-weight:800}
+.scents{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sc{border:0;border-radius:28px;padding:26px 22px 22px;text-align:left;cursor:pointer;display:grid;gap:10px;font:inherit;min-height:300px;align-content:end;position:relative;overflow:hidden;transition:transform .2s}
+.sc:hover{transform:translateY(-6px) rotate(-1deg)}
+.sc svg{position:absolute;top:-8px;right:-14px;width:120px;transform:rotate(14deg);opacity:.95}
+.sc h3{font-size:30px}.sc p{font-size:15px;opacity:.9}
+.sc b{font:700 20px var(--display)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why>div{display:grid;gap:14px;align-content:start}
+.badge{width:96px;height:96px;border-radius:50%;background:var(--scent);color:var(--on);display:grid;place-items:center;font:800 28px var(--display);letter-spacing:-.04em;transition:background-color .5s,color .5s}
+.why h3{font-size:28px}.why p,.two p{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:var(--card);border-radius:28px;padding:36px}
+.box h3{font-size:30px;margin-bottom:18px}
+.box ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.box li{padding-left:30px;position:relative}
+.yes li::before{content:"✓";position:absolute;left:0;color:#2E8B6A;font-weight:800}
+.no li::before{content:"✕";position:absolute;left:0;color:#B5483F;font-weight:800}
+.alt{background:var(--card)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+blockquote{margin:0;background:var(--bg);border-radius:28px;padding:30px;display:grid;gap:18px;align-content:space-between}
+blockquote .st{color:#E8A317;letter-spacing:3px;font-size:18px}
+blockquote p{font:700 22px/1.3 var(--display);letter-spacing:-.015em}
+blockquote cite{font-style:normal;color:var(--muted);font-size:15px}
+.final{background:var(--scent);color:var(--on);text-align:center;padding:96px 24px;display:grid;gap:22px;justify-items:center;position:relative;overflow:hidden;transition:background-color .5s,color .5s}
+.final h2{font-size:clamp(40px,6.4vw,84px);max-width:13em;margin:0;font-weight:800;position:relative}
+.final p{max-width:30em;opacity:.92;position:relative}
+.final .btn{background:var(--on);color:var(--scent);position:relative}
+footer{padding:28px 0 44px;color:var(--muted);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){
+  .hero-grid,.why,.two,.quotes{grid-template-columns:1fr}
+  .scents{grid-template-columns:1fr 1fr}
+  .nav-r a{display:none}
+  .stage{order:-1}
+  .hero{padding-bottom:90px}
+}
+@media (max-width:480px){.scents{grid-template-columns:1fr}.sc{min-height:200px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="big" aria-hidden="true">arkaa</div>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">arkaa</a>
+      <div class="nav-r">
+        <a href="#scents">Scents</a><a href="#why">Why Arkaa</a><a href="#reviews">Reviews</a>
+        <span class="cart" id="cart" aria-live="polite">Cart · 0</span>
+      </div>
+    </nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="tag">★ Aluminium-free · 24-hour fresh</span>
+        <h1>Still fresh when the day isn’t.</h1>
+        <p class="lead">The deodorant that keeps you fresh from the morning commute to the last bus home. Gentle on skin, tough on sweat and odour.</p>
+        <div class="chips" id="chips" role="group" aria-label="Choose a scent"></div>
+        <div class="buy"><span class="price" id="sPrice"></span><button class="btn" id="add">Add to cart</button></div>
+      </div>
+      <div class="stage" aria-live="polite">
+        <svg id="stick" viewBox="0 0 160 320" role="img" aria-label="Arkaa deodorant stick">
+          <rect class="stick-body" x="28" y="80" width="104" height="224" rx="24"/>
+          <rect class="stick-band" x="28" y="150" width="104" height="92"/>
+          <rect class="stick-shine" x="40" y="90" width="12" height="200" rx="6"/>
+          <rect class="stick-cap" x="36" y="8" width="88" height="88" rx="20"/>
+          <text class="stick-word" x="80" y="206" text-anchor="middle">arkaa</text>
+        </svg>
+        <h2 id="sName"></h2><p id="sDesc"></p>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 100 480 0 720 40s480 60 720 0V90H0Z"/></svg>
+</header>
+
+<div class="marq" aria-hidden="true"><div id="marq"></div></div>
+
+<main>
+<section class="sec" id="scents"><div class="wrap">
+  <h2>Four scents. Pick your mood.</h2>
+  <div class="scents" id="cards"></div>
+</div></section>
+
+<section class="sec alt" id="why"><div class="wrap">
+  <h2>Made for hot days, long commutes and tight shirts.</h2>
+  <div class="why">
+    <div><div class="badge">24h</div><h3>Lasts all day</h3><p>A light, dry-touch formula that keeps working through heat, humidity and a full day on your feet.</p></div>
+    <div><div class="badge">0</div><h3>Zero white marks</h3><p>Glides on clear and dries fast, so dark shirts and sleeveless tops stay spotless.</p></div>
+    <div><div class="badge">♡</div><h3>Gentle on skin</h3><p>Free from aluminium, alcohol and harsh fragrance, and tested on sensitive skin.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Simple ingredients. Nothing you’d need to look up.</h2>
+  <div class="two">
+    <div class="box yes"><h3>What’s in it</h3><ul><li>Baking soda to neutralise odour</li><li>Coconut oil to soften and glide</li><li>Arrowroot to absorb moisture</li><li>Shea butter to care for skin</li><li>Essential oils for scent</li></ul></div>
+    <div class="box no"><h3>What’s left out</h3><ul><li>Aluminium salts</li><li>Parabens</li><li>Alcohol</li><li>Artificial dyes</li><li>Animal testing</li></ul></div>
+  </div>
+</div></section>
+
+<section class="sec alt" id="reviews"><div class="wrap">
+  <h2>People who switched, stayed.</h2>
+  <div class="quotes">
+    <blockquote><span class="st">★★★★★</span><p>“I wore it through a full day of site visits in July. Still fresh at night.”</p><cite>Rohan, Kolkata</cite></blockquote>
+    <blockquote><span class="st">★★★★★</span><p>“Finally a deodorant that doesn’t sting after shaving. Cedar Rain is my favourite.”</p><cite>Ananya, Bengaluru</cite></blockquote>
+    <blockquote><span class="st">★★★★★</span><p>“No marks on my black kurta. That alone sold me.”</p><cite>Meera, Mumbai</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="final">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <h2>Try Arkaa for 30 days. Love it or get your money back.</h2>
+  <p>Free delivery on every order.</p>
+  <a class="btn" href="#top">Choose your scent</a>
+</section>
+</main>
+<div class="wrap"><footer><span>© 2026 Arkaa. All rights reserved.</span><span>Contact · Shipping · Returns · Privacy</span></footer></div>
+
+<script>
+var scents=[
+ {n:"Sea Salt",c:"#2F7FA8",o:"#FFFFFF",p:349,d:"Clean and breezy, like the shore after rain."},
+ {n:"Citrus Grove",c:"#F2B01E",o:"#10303A",p:349,d:"Bright orange and lemon peel to wake you up."},
+ {n:"Cedar Rain",c:"#2E6B55",o:"#FFFFFF",p:379,d:"Warm cedar and damp earth. Calm and grounded."},
+ {n:"Cotton Bloom",c:"#C2577C",o:"#FFFFFF",p:379,d:"Soft white florals over fresh linen."}
+];
+var cart=0,chips=document.getElementById("chips"),stick=document.getElementById("stick");
+function show(i,anim){
+  var s=scents[i],r=document.documentElement.style;
+  r.setProperty("--scent",s.c);r.setProperty("--on",s.o);
+  document.getElementById("sName").textContent=s.n;
+  document.getElementById("sDesc").textContent=s.d;
+  document.getElementById("sPrice").textContent="₹"+s.p;
+  for(var k=0;k<chips.children.length;k++)chips.children[k].setAttribute("aria-pressed",k===i);
+  if(anim){stick.classList.remove("pop");void stick.getBoundingClientRect();stick.classList.add("pop")}
+}
+var cards=document.getElementById("cards");
+scents.forEach(function(s,i){
+  var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=s.n;
+  b.onclick=function(){show(i,true)};chips.appendChild(b);
+  var c=document.createElement("button");c.className="sc";c.type="button";
+  c.style.background=s.c;c.style.color=s.o;
+  c.innerHTML='<svg viewBox="0 0 160 320" aria-hidden="true"><rect x="28" y="80" width="104" height="224" rx="24" fill="#fff"/><rect x="28" y="150" width="104" height="92" fill="'+s.o+'" opacity=".9"/><rect x="36" y="8" width="88" height="88" rx="20" fill="#10303A"/></svg><h3>'+s.n+'</h3><p>'+s.d+'</p><b>₹'+s.p+'</b>';
+  c.onclick=function(){show(i,true);window.scrollTo({top:0,behavior:"smooth"})};
+  cards.appendChild(c);
+});
+var words=["Aluminium-free","24-hour fresh","No white marks","Dermatologist-tested","Free delivery","30-day guarantee"],m="";
+for(var j=0;j<2;j++)words.forEach(function(w){m+="<span>"+w+"</span><span>✦</span>"});
+document.getElementById("marq").innerHTML=m+m;
+document.getElementById("add").onclick=function(){
+  cart++;document.getElementById("cart").textContent="Cart · "+cart;
+  var a=this;a.textContent="Added ✓";setTimeout(function(){a.textContent="Add to cart"},1200);
+};
+show(0,false);
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("off",!e.isIntersecting)})});
+  [].forEach.call(document.querySelectorAll(".hero,.marq"),function(el){io.observe(el)});
+}
+<\/script>
+</body>
+</html>
+
+</script>
+<script type="text/plain" id="demo-bakery">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Bakery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8fa;
+}
+
+header{
+    background:linear-gradient(135deg,#ff4d88,#ff89b3);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:#ff4d88;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.section{
+    padding:50px 10%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff4d88;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#ff4d88;
+}
+
+.price{
+    font-weight:bold;
+    color:#222;
+    margin-top:10px;
+}
+
+.contact{
+    text-align:center;
+    background:#ffe3ed;
+    padding:50px 20px;
+}
+
+.contact a{
+    display:inline-block;
+    background:#ff4d88;
+    color:white;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:30px;
+    margin-top:20px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎂 Your's Bakery</h1>
+<p>Handmade Cakes Made With Love</p>
+<a href="tel:+123456789" class="btn">📞 Call To Order</a>
+</header>
+
+<section class="section">
+<h2>🧁 Signature Cupcakes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Chocolate Dream</h3>
+<p>Rich chocolate cupcake with silky frosting.</p>
+<div class="price">₹149 each</div>
+</div>
+
+<div class="card">
+<h3>Vanilla Cloud</h3>
+<p>Soft vanilla sponge topped with whipped cream.</p>
+<div class="price">₹149 each</div>
+</div>
+
+<div class="card">
+<h3>Red Velvet Love</h3>
+<p>Classic red velvet with cream cheese frosting.</p>
+<div class="price">₹199 each</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>🪣 Bucket Cakes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Chocolate Overload</h3>
+<div class="price">₹1199</div>
+</div>
+
+<div class="card">
+<h3>Cookies & Cream</h3>
+<div class="price">₹899</div>
+</div>
+
+<div class="card">
+<h3>Strawberry Bliss</h3>
+<div class="price">₹1299</div>
+</div>
+
+<div class="card">
+<h3>Oreo Explosion</h3>
+<div class="price">₹1399</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>🎉 Custom Cakes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Birthday Cakes</h3>
+<p>Custom themes and designs.</p>
+</div>
+
+<div class="card">
+<h3>Wedding Cakes</h3>
+<p>Elegant premium wedding collections.</p>
+</div>
+
+<div class="card">
+<h3>Baby Shower Cakes</h3>
+<p>Unique handmade creations.</p>
+</div>
+
+<div class="card">
+<h3>Photo Cakes</h3>
+<p>Your favorite photo printed on cake.</p>
+</div>
+
+<div class="card">
+<h3>Theme Cakes</h3>
+<p>Cartoons, superheroes, gaming and more.</p>
+</div>
+
+<div class="card">
+<h3>Fully Customized</h3>
+<p>You imagine it. We bake it.</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact">
+<h2>📞 Order Your Dream Cake</h2>
+<p>Call us and explain your design idea.</p>
+<p>We'll create a special handmade cake just for you.</p>
+
+<a href="tel:+123456789">
+Call IxaryssBakery
+</a>
+</section>
+
+<footer>
+© 2026 IxaryssBakery • Handmade with Love ❤️
+</footer>
+
+</body>
+</html>
+
+</script>
+<script type="text/plain" id="demo-paint">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Paint Shop</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+header{
+    background:linear-gradient(135deg,#ff7b00,#ffcc00);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+header h1{
+    font-size:3rem;
+}
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+html{scroll-behavior:smooth}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+section{
+    padding:50px 10%;
+}
+h2{
+    color:#ff7b00;
+    text-align:center;
+}
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+.price{
+    color:green;
+    font-weight:bold;
+    font-size:20px;
+}
+.contact{
+    background:#fff1d6;
+    text-align:center;
+    padding:40px;
+}
+button{
+    background:#ff7b00;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+}
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<header id="top">
+<h1>🎨 Your Paint Shop</h1>
+<p>Premium Interior & Exterior Paints</p>
+</header>
+
+<nav>
+<a href="#top">Home</a>
+<a href="#products">Products</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="products">
+
+<h2>Our Best Selling Paints</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>Interior Wall Paint</h3>
+<p>Premium smooth finish for homes.</p>
+<p class="price">₹1,299 / 10 Litre</p>
+</div>
+
+<div class="card">
+<h3>Exterior Weather Paint</h3>
+<p>Protection against heat and rain.</p>
+<p class="price">₹2,499 / 10 Litre</p>
+</div>
+
+<div class="card">
+<h3>Luxury Emulsion Paint</h3>
+<p>High durability and washable finish.</p>
+<p class="price">₹3,199 / 10 Litre</p>
+</div>
+
+<div class="card">
+<h3>Wood Polish Paint</h3>
+<p>Special coating for wooden furniture.</p>
+<p class="price">₹899 / Litre</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2>Painting Services</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>House Painting</h3>
+<p>Starting from ₹15 per sq.ft</p>
+</div>
+
+<div class="card">
+<h3>Office Painting</h3>
+<p>Starting from ₹18 per sq.ft</p>
+</div>
+
+<div class="card">
+<h3>Commercial Buildings</h3>
+<p>Custom quotation available</p>
+</div>
+
+</div>
+
+</section>
+
+<div class="contact" id="contact">
+
+<h2>📞 Contact Us</h2>
+
+<p>Call us for a free quotation.</p>
+
+<p><b>Phone:</b> +91 98765 43210</p>
+
+<p><b>Email:</b> info@yourpaintshop.in</p>
+
+<button>Get Free Quote</button>
+
+</div>
+
+<footer>
+© 2026 Your Paint Shop | Quality Paints For Every Wall
+</footer>
+
+</body>
+</html>
+</script>
+
+<script>
+(function(){
+  /* theme */
+  var root=document.documentElement,btns=document.querySelectorAll(".theme button");
+  function setTheme(t,save){
+    root.setAttribute("data-theme",t);
+    for(var i=0;i<btns.length;i++)btns[i].setAttribute("aria-pressed",btns[i].getAttribute("data-t")===t);
+    if(save){try{localStorage.setItem("ix-theme",t)}catch(e){}}
+  }
+  var cur=root.getAttribute("data-theme")||"light";setTheme(cur,false);
+  for(var i=0;i<btns.length;i++)btns[i].addEventListener("click",function(){setTheme(this.getAttribute("data-t"),true)});
+
+  /* demos */
+  var demos=[
+    {t:"Hotel Nilsagar",g:"Hotel · New Digha",d:"Rooms, dining and a WhatsApp enquiry form for a seaside stay.",k:"hotel",bg:"linear-gradient(160deg,#10506a,#2b8a9b 55%,#f1c27a)",fg:"#ffffff"},
+    {t:"Arkaa",g:"Brand store · Deodorant",d:"A product page where choosing a scent recolours the whole site.",k:"perfume",bg:"linear-gradient(160deg,#2F7FA8,#5aa6cc)",fg:"#ffffff"},
+    {t:"Your Bakery",g:"Bakery · Cakes",d:"Cupcakes, bucket cakes and custom orders with tap-to-call.",k:"bakery",bg:"linear-gradient(160deg,#ff4d88,#ff89b3)",fg:"#ffffff"},
+    {t:"Your Paint Shop",g:"Local shop · Paints",d:"Products, painting services and a free-quote section.",k:"paint",bg:"linear-gradient(160deg,#ff7b00,#ffcc00)",fg:"#ffffff"}
+  ];
+  var track=document.getElementById("track"),html="";
+  demos.forEach(function(x){
+    html+='<a class="demo" href="#work" role="button" data-k="'+x.k+'">'
+      +'<div class="pv" style="background:'+x.bg+';--fg:'+x.fg+'"><div class="bar"><u></u><u></u><u></u></div><div class="in"><div class="l1"></div><div class="l2"></div><div class="l3"></div><div class="l4"></div></div><div class="sh"></div></div>'
+      +'<div class="tg">'+x.g+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p><div class="go">View demo <span>→</span></div></a>';
+  });
+  track.innerHTML=html;
+  /* duplicate for a seamless loop: fewer copies on narrow screens, same speed */
+  var base=Array.prototype.slice.call(track.children),nSets=0;
+  function buildTrack(){
+    var n=window.innerWidth>1100?3:2;
+    if(n===nSets)return;nSets=n;
+    while(track.children.length>base.length)track.removeChild(track.lastChild);
+    for(var c=1;c<n;c++)base.forEach(function(k){var d=k.cloneNode(true);d.setAttribute("aria-hidden","true");d.setAttribute("tabindex","-1");track.appendChild(d)});
+    track.style.setProperty("--n",n);
+    track.style.animationName="slide3";
+    track.style.animationDuration=(20*n)+"s";
+  }
+  buildTrack();
+  var rz;window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(buildTrack,200)},{passive:true});
+
+  /* pause animations that are off-screen */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("off",!e.isIntersecting)})});
+    [].forEach.call(document.querySelectorAll(".hero,.marq,.slider"),function(el){io.observe(el)});
+  }
+
+  /* in-page demo viewer */
+  var viewer=document.getElementById("viewer"),vframe=document.getElementById("vframe"),vtitle=document.getElementById("vtitle"),vstage=document.getElementById("vstage"),vclose=document.getElementById("vclose"),vbtns=document.querySelectorAll(".vdev button"),lastFocus=null,cache={};
+  function demoSrc(k){
+    if(!cache[k]){cache[k]=document.getElementById("demo-"+k).textContent.replace(/<\\\/script/g,"</script")}
+    return cache[k];
+  }
+  function setView(v){
+    vstage.className="vstage"+(v==="m"?" m":"");
+    for(var i=0;i<vbtns.length;i++)vbtns[i].setAttribute("aria-pressed",vbtns[i].getAttribute("data-v")===v);
+  }
+  function openDemo(k,from){
+    var d=null;demos.forEach(function(x){if(x.k===k)d=x});
+    if(!d)return;
+    lastFocus=from;vtitle.textContent=d.t;setView("d");
+    vframe.srcdoc=demoSrc(k);
+    viewer.hidden=false;root.style.overflow="hidden";root.classList.add("vopen");vclose.focus();
+  }
+  function closeDemo(){
+    viewer.hidden=true;vframe.srcdoc="";root.style.overflow="";root.classList.remove("vopen");
+    if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+  }
+  track.addEventListener("click",function(e){
+    var a=e.target.closest?e.target.closest(".demo"):null;
+    if(!a)return;e.preventDefault();openDemo(a.getAttribute("data-k"),a);
+  });
+  track.addEventListener("keydown",function(e){
+    if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("demo")){e.preventDefault();openDemo(e.target.getAttribute("data-k"),e.target)}
+  });
+  vclose.addEventListener("click",closeDemo);
+  for(var q=0;q<vbtns.length;q++)vbtns[q].addEventListener("click",function(){setView(this.getAttribute("data-v"))});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!viewer.hidden)closeDemo()});
+
+  /* marquees */
+  function fill(id,words){
+    var m="";for(var j=0;j<2;j++)words.forEach(function(w){m+="<span>"+w+"</span><i>✦</i>"});
+    document.getElementById(id).innerHTML=m+m;
+  }
+  fill("m1",["Hotels","Restaurants","Shops","Bakeries","Brands","Portfolios","Landing pages"]);
+  fill("m2",["Websites only","Clean design","Fast on phones","Light · Mid · Dark","Hotels","Bakeries","Brands","Local shops"]);
+
+  /* copy email */
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    var e="wmoondrift27@gmail.com";
+    function done(m){cb.textContent=m;setTimeout(function(){cb.textContent="Copy email address"},1800)}
+    try{navigator.clipboard.writeText(e).then(function(){done("Copied ✓")},function(){done(e)})}catch(x){done(e)}
+  });
+})();
+</script>
+</body>
+</html>
